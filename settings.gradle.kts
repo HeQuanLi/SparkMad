@@ -32,3 +32,5 @@ include(":module:module_login")
 include(":core:core_base")
 include(":core:core_http")
 include(":core:core_mmkv")
+
+includeBuild("plugins/plugin_config")
