@@ -1,2 +1,3 @@
 # SparkMad
-![MAD架构图2](https://user-images.githubusercontent.com/7410469/162581502-51a161c6-6f16-4f00-b4a1-d6fcf648058e.svg)
+
+![MAD架构图2 (1)](https://user-images.githubusercontent.com/7410469/162581531-10b06854-80f9-446c-8cfd-d532fc407866.svg)
