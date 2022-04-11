@@ -14,9 +14,11 @@ val runModuleName: String by project
 subprojects {
     //所有module的project都是要下面的插件
     apply(plugin = "GradleCommonConfigPlugin")
-    if ( "app" == project.name) {
+    if (runModuleName == project.name) {
         apply(plugin = "com.android.application")
     } else {
         apply(plugin = "com.android.library")
     }
 }
+
+apply(from= file("gradle/projectDependencyGraph.gradle"))
