@@ -1,6 +1,3 @@
 dependencies {
-    implementation(libs.coreKtx)
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.bundles.test)
+    implementation(project(mapOf("path" to ":module:module_main")))
 }
