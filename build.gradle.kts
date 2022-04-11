@@ -8,6 +8,9 @@ plugins {
 
 task<Delete>("clean") {
     delete(rootProject.buildDir)
+    subprojects {
+        delete(this.buildDir)
+    }
 }
 val runModuleName: String by project
 
