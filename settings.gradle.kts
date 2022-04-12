@@ -13,6 +13,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { setUrl("https://oss.jfrog.org/libs-snapshot") }
     }
 
     versionCatalogs {
