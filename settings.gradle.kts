@@ -13,6 +13,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { setUrl("https://oss.jfrog.org/libs-snapshot") }
     }
 
     versionCatalogs {
@@ -30,7 +31,10 @@ include(":module:module_home")
 include(":module:module_mine")
 include(":module:module_login")
 include(":core:core_base")
+include(":core:core_sw")
 include(":core:core_http")
+include(":core:core_repository")
 include(":core:core_mmkv")
 
 includeBuild("plugins/plugin_config")
+
