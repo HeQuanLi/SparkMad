@@ -105,7 +105,7 @@ class GradleCommonConfigPlugin : Plugin<Project> {
      * 公共插件配置
      */
     private fun Project.configCommonPlugin() {
-        plugins.apply("kotlin-android")
+        plugins.apply("org.jetbrains.kotlin.android")
     }
 
     /**
