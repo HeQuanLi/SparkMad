@@ -6,7 +6,7 @@ plugins {
 }
 
 tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = libs.versions.jvmTargetVersion.toString()
+    kotlinOptions.jvmTarget = "11"
 }
 
 gradlePlugin {
@@ -18,6 +18,6 @@ gradlePlugin {
 
 dependencies {
     implementation(gradleApi())
-    implementation(libs.kotlinGradlePlugin)
-    implementation(libs.gradle)
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0")
+    implementation("com.android.tools.build:gradle:7.1.3")
 }

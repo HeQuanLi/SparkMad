@@ -1,6 +1,7 @@
 package com.hql.spark.module.main
 
 import android.os.Bundle
+import android.widget.TextView
 import com.hql.spark.module.base.BaseActivity
 
 class MainActivity : BaseActivity() {

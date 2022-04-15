@@ -7,7 +7,7 @@ android {
             print("runModuleName.contains(project.name) ${runModuleName.contains(project.name)}")
         }
     }
-    resourcePrefix = "module_home_"
+//    resourcePrefix = "module_home_"
 }
 
 dependencies {

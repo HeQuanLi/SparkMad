@@ -2,7 +2,7 @@ android {
     defaultConfig {
         //applicationId = "com.hql.spark.module.mine"
     }
-    resourcePrefix = "module_mine_"
+//    resourcePrefix = "module_mine_"
 }
 
 dependencies {

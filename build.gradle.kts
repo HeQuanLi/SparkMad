@@ -12,6 +12,11 @@ task<Delete>("clean") {
         delete(this.buildDir)
     }
 }
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>() {
+    kotlinOptions.jvmTarget = libs.versions.jvmTargetVersion.toString()
+}
+
 val runModuleName: String by project
 
 subprojects {
