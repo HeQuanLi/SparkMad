@@ -8,7 +8,7 @@ package com.hql.spark.core.http.utils
 
 object HttpConstant {
 
-    const val BASE_URL = "https://fat.wanandroid.com"
+    const val BASE_URL = "https://www.wanandroid.com"
     const val FAT_URL = "https://fat.wanandroid.com"
 
     //Domain-Name

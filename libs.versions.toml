@@ -17,17 +17,27 @@ espresso           = { group = "androidx.test.espresso",      name = "espresso-c
 constraintlayout   = { group = "androidx.constraintlayout",   name = "constraintlayout",     version = "2.0.4"         }
 
 retrofit           = "com.squareup.retrofit2:retrofit:2.9.0"
-okhttp             = "com.squareup.okhttp3:okhttp-bom:4.9.3"
-gson               = "com.google.code.gson:gson:2.9.0"
-rxjava             = "io.reactivex.rxjava3:rxjava:3.1.4"
-rxjavaAdapter      = "com.squareup.retrofit2:adapter-rxjava3:2.9.0"
-rxandroid          = "io.reactivex.rxjava3:rxandroid:3.0.0"
+moshi_converter    = "com.squareup.retrofit2:converter-moshi:2.9.0"
+okhttp             = "com.squareup.okhttp3:okhttp:4.10.0"
+
+moshi              = "com.squareup.moshi:moshi-kotlin:1.13.0"
 annotation         = "androidx.annotation:annotation:1.3.0"
 coroutines         = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9"
+
+viewmodel          = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0"
+
+fragmentKtx        = "androidx.fragment:fragment-ktx:1.5.0"
+activityKtx        = "androidx.activity:activity-ktx:1.5.1"
 
 [bundles]
 test = [
     "junit",
     "androidTest",
     "espresso"
+]
+
+http = [
+    "retrofit",
+    "moshi_converter",
+    "okhttp"
 ]

@@ -1,13 +1,12 @@
 package com.hql.spark.core.http
 
-import com.hql.spark.core.http.converter.gson.GsonConverterFactory
 import com.hql.spark.core.http.interceptor.CommonInterceptor
 import com.hql.spark.core.http.interceptor.DynamicBaseUrlInterceptor
 import com.hql.spark.core.http.interceptor.LoggingInterceptor
 import com.hql.spark.core.http.utils.HttpConstant
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 /**
@@ -36,8 +35,7 @@ class RetrofitFactory private constructor() {
 
         retrofit = Retrofit.Builder().apply {
             baseUrl(HttpConstant.BASE_URL)
-            addConverterFactory(GsonConverterFactory.create())
-            addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+            addConverterFactory(MoshiConverterFactory.create())
             client(okhttp)
         }.build()
     }

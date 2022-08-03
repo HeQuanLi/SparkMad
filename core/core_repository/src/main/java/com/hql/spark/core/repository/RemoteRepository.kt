@@ -1,10 +1,9 @@
 package com.hql.spark.core.repository
 
 import com.hql.spark.core.http.RetrofitFactory
-import com.hql.spark.core.http.mapper.BaseResponseRxMapper
-import com.hql.spark.core.http.utils.RxUtils
+import com.hql.spark.core.http.response.BaseResponse
 import com.hql.spark.core.repository.home.HomeService
-import io.reactivex.rxjava3.core.Observable
+import com.hql.spark.core.repository.test.PageData
 
 /**
  * @author HQL
@@ -22,24 +21,7 @@ class RemoteRepository {
         }
     }
 
-    fun getHomeArticleList(): Observable<String> {
-        return homeService.getHomeArticleList()
-            .map(BaseResponseRxMapper())
-            .compose(RxUtils.ioToMain())
+    suspend fun getHomeArticleList2(): BaseResponse<PageData> {
+        return homeService.getHomeArticleList2()
     }
-
-    /**
-    /*
-     * **/
-    public static void getDuoBanTop(int start, int count, Observer<movieTopReq> observer) {
-             setSubscribe(movieService.getMovicTop(start, count), observer);
-    }
-
-    private static <T> void setSubscribe(Observable<T> observable, Observer<T> observer) {
-            observable.subscribeOn(Schedulers.io())
-            .subscribeOn(Schedulers.newThread())//子线程访问网络
-            .observeOn(AndroidSchedulers.mainThread())//回调到主线程
-            .subscribe(observer);
-    }
-     */
 }
