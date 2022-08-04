@@ -1,7 +1,7 @@
 package com.hql.spark.core.repository
 
 import com.hql.spark.core.http.RetrofitFactory
-import com.hql.spark.core.http.response.BaseResponse
+import com.hql.spark.core.http.response.ApiResponse
 import com.hql.spark.core.repository.home.HomeService
 import com.hql.spark.core.repository.test.PageData
 
@@ -11,7 +11,7 @@ import com.hql.spark.core.repository.test.PageData
  * Desc:
  */
 
-class RemoteRepository {
+class RemoteRepository : BaseRepository() {
 
     private val homeService: HomeService = RetrofitFactory.instance.create(HomeService::class.java)
 
@@ -21,7 +21,9 @@ class RemoteRepository {
         }
     }
 
-    suspend fun getHomeArticleList2(): BaseResponse<PageData> {
-        return homeService.getHomeArticleList2()
+    suspend fun getHomeArticleList2(): ApiResponse<PageData> {
+        return executeHttp {
+            homeService.getHomeArticleList2()
+        }
     }
 }

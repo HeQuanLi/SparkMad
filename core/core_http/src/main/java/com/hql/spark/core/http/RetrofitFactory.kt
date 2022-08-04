@@ -6,6 +6,7 @@ import com.hql.spark.core.http.interceptor.LoggingInterceptor
 import com.hql.spark.core.http.utils.HttpConstant
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
@@ -35,7 +36,7 @@ class RetrofitFactory private constructor() {
 
         retrofit = Retrofit.Builder().apply {
             baseUrl(HttpConstant.BASE_URL)
-            addConverterFactory(MoshiConverterFactory.create())
+            addConverterFactory(GsonConverterFactory.create())
             client(okhttp)
         }.build()
     }
