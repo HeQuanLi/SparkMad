@@ -3,6 +3,7 @@ package com.hql.spark.core.http
 import com.hql.spark.core.http.interceptor.CommonInterceptor
 import com.hql.spark.core.http.interceptor.DynamicBaseUrlInterceptor
 import com.hql.spark.core.http.interceptor.LoggingInterceptor
+import com.hql.spark.core.http.test.NetworkResultCallAdapterFactory
 import com.hql.spark.core.http.utils.HttpConstant
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -37,6 +38,7 @@ class RetrofitFactory private constructor() {
         retrofit = Retrofit.Builder().apply {
             baseUrl(HttpConstant.BASE_URL)
             addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(NetworkResultCallAdapterFactory.create())
             client(okhttp)
         }.build()
     }
